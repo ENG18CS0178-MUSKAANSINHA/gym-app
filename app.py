@@ -17,19 +17,34 @@ def save_users(users):
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
 
-@app.route("/", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        users = load_users()
-        email = request.form["email"]
-        password = request.form["password"]
+# @app.route("/", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         users = load_users()
+#         email = request.form["email"]
+#         password = request.form["password"]
 
-        if email in users and users[email]["password"] == password:
-            session["user"] = email
-            return redirect(url_for("dashboard"))
+#         if email in users and users[email]["password"] == password:
+#             session["user"] = email
+#             return redirect(url_for("dashboard"))
+#         else:
+#             return "Invalid credentials"
+#     return render_template("login.html")
+    
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # Dummy validation
+        if username == "admin" and password == "1234":
+            return "Login successful!"
         else:
-            return "Invalid credentials"
-    return render_template("login.html")
+            return "Invalid credentials!"
+    
+    return render_template('login.html')
+
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
