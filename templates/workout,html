@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym App - Workout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #36d1dc, #5b86e5);
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: #222;
+      padding: 15px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background: #36d1dc;
+      color: white;
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 12px 20px;
+      background: #36d1dc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2aabb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div>🏋️ Gym App</div>
+    <div>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="workout.html">Workout</a>
+      <a href="login.html">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>My Workouts</h1>
+
+    <table id="workoutTable">
+      <tr>
+        <th>Exercise</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Weight (kg)</th>
+      </tr>
+      <!-- Workouts will appear here -->
+    </table>
+
+    <h2>Add Workout</h2>
+    <form id="workoutForm">
+      <input type="text" id="exercise" placeholder="Exercise" required>
+      <input type="number" id="sets" placeholder="Sets" required>
+      <input type="number" id="reps" placeholder="Reps" required>
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("workoutForm");
+    const table = document.getElementById("workoutTable");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const exercise = document.getElementById("exercise").value;
+      const sets = document.getElementById("sets").value;
+      const reps = document.getElementById("reps").value;
+      const weight = document.getElementById("weight").value;
+
+      const newRow = table.insertRow();
+      newRow.innerHTML = `
+        <td>${exercise}</td>
+        <td>${sets}</td>
+        <td>${reps}</td>
+        <td>${weight || '-'}</td>
+      `;
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
 
