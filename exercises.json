@@ -1,0 +1,10 @@
+{
+  "lose_weight": [
+    {"name": "Jumping Jacks", "video": "exercises/jumping_jacks.gif", "time": "30s"},
+    {"name": "Burpees", "video": "exercises/burpees.gif", "time": "20s"}
+  ],
+  "gain_weight": [
+    {"name": "Push-ups", "video": "exercises/pushups.gif", "time": "15 reps"},
+    {"name": "Squats", "video": "exercises/squats.gif", "time": "20 reps"}
+  ]
+}
