@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym App - Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .card p {
+      font-size: 14px;
+      color: #666;
+    }
+    .logout-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff416c;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .logout-btn:hover {
+      background: #ff2e54;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Track your fitness journey 🚀</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Workout Plan</h2>
+      <p>Your next workout: <b>Chest & Triceps</b></p>
+      <a href="workouts.html" class="logout-btn">View Plan</a>
+    </div>
+
+    <div class="card">
+      <h2>Diet Plan</h2>
+      <p>Today's calories: <b>2200 kcal</b></p>
+      <a href="diet.html" class="logout-btn">View Diet</a>
+    </div>
+
+    <div class="card">
+      <h2>Progress</h2>
+      <p>Weight: <b>70kg</b> <br> Goal: <b>65kg</b></p>
+      <a href="progress.html" class="logout-btn">Track Progress</a>
+    </div>
+
+    <div class="card">
+      <h2>Profile</h2>
+      <p>Edit your personal info and preferences.</p>
+      <a href="profile.html" class="logout-btn">Edit Profile</a>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin: 20px;">
+    <a href="login.html" class="logout-btn">Logout</a>
+  </div>
+</body>
+</html>
 
